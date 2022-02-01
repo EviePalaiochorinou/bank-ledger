@@ -12,6 +12,6 @@ describe BankStatement do
   
   context 'can take transactions info to make a bank statement'
     it 'prints a bank statement' do
-      expect{@bank_statement.print(@transactions)}.to output("date || credit || debit || balance\n01/02/2022 || 1000 || || 1000\n01/02/2022 || || 500 || 500\n").to_stdout
+      expect{@bank_statement.print(@transactions)}.to output("date || credit || debit || balance\n01/02/2022 || 1000.00 || || 1000.00\n01/02/2022 || || 500.00 || 500.00\n").to_stdout
     end
 end
