@@ -4,6 +4,7 @@ require 'transactions'
 describe BankStatement do
 
   before do
+    allow(DateTime).to receive(:now).and_return DateTime.new(2022,02,01)
     @bank_statement = BankStatement.new
     @transactions = Transactions.new
     @transactions.deposit(1000)
