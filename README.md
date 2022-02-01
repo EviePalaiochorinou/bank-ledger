@@ -19,7 +19,7 @@ User can make bank account transactions, e.g. deposit and withdraw money, and vi
 
 - Start IRB requiring the relevant files
   ```sh
-  irb -r ./lib/transactions.rb ./lib/bank_statement.rb
+  irb -r ./lib/bank_statement.rb
   ```
 - Create a new transaction
   ```sh
