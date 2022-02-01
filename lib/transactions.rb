@@ -15,4 +15,11 @@ class Transactions
     }
   end
 
+  def withdraw(amount)
+    @transactions << {
+      :timestamp => (DateTime.now).strftime("%d/%m/%Y"),
+      :type => "withdraw",
+      :amount => amount,
+    }
+  end
 end

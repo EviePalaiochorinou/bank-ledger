@@ -12,4 +12,8 @@ describe Transactions do
       expect(@transaction.transactions).to eq([{:timestamp=>"01/02/2022", :type=>"deposit", :amount=>1000}])
     end
 
+    it 'can withdraw money' do
+      @transaction.withdraw(500)
+      expect(@transaction.transactions).to include({:timestamp=>"01/02/2022", :type=>"withdraw", :amount=>500})
+    end
 end
