@@ -1,6 +1,6 @@
-require 'transactions'
+require 'account'
 
-describe Transactions do
+describe Account do
 
   before do
     allow(DateTime).to receive(:now).and_return DateTime.new(2022, 02, 01)

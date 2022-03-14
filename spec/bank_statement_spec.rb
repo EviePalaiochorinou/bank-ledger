@@ -1,5 +1,5 @@
 require 'bank_statement'
-require 'transactions'
+require 'account'
 
 describe BankStatement do
   before do
