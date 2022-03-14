@@ -10,11 +10,11 @@ describe Account do
 
   context 'tests your account actions'
   it 'can deposit money' do
-    expect(@account.instance_variable_get(:@transactions)).to eq([{ timestamp: '01/02/2022', type: 'deposit', amount: 1000 }])
+    expect(@account.get_transactions).to eq([{ timestamp: '01/02/2022', type: 'deposit', amount: 1000 }])
   end
 
   it 'can withdraw money' do
     @account.withdraw(500)
-    expect(@account.instance_variable_get(:@transactions)).to include({ timestamp: '01/02/2022', type: 'withdraw', amount: 500 })
+    expect(@account.get_transactions).to include({ timestamp: '01/02/2022', type: 'withdraw', amount: 500 })
   end
 end

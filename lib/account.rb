@@ -27,4 +27,8 @@ class Account
     bs = BankStatement.new
     bs.print(@transactions)
   end
+
+  def get_transactions
+    @transactions
+  end
 end
