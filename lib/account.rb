@@ -1,10 +1,18 @@
 require 'date'
+require 'bank_statement'
 
-class Transactions
-  attr_reader :transactions
+class Account
 
   def initialize
     @transactions = []
+  end
+
+  def withdraw(amount)
+    @transactions << {
+      timestamp: (DateTime.now).strftime('%d/%m/%Y'),
+      type: 'withdraw',
+      amount: amount
+    }
   end
 
   def deposit(amount)
@@ -15,11 +23,8 @@ class Transactions
     }
   end
 
-  def withdraw(amount)
-    @transactions << {
-      timestamp: (DateTime.now).strftime('%d/%m/%Y'),
-      type: 'withdraw',
-      amount: amount
-    }
+  def print_bank_statement
+    bs = BankStatement.new
+    bs.print(@transactions)
   end
 end
