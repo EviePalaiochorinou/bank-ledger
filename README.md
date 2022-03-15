@@ -23,30 +23,30 @@ User can make bank account transactions, e.g. deposit and withdraw money, and vi
   ```
 - Create a new transaction
   ```sh
-  transaction = Transactions.new
+  account = Account.new
   ``` 
 - Deposit money
 
   ```sh
-  transaction.deposit(100)
-  => 100.0
+  account.deposit(1000)
+  => 1000.00
   ```
 
 - Withdraw money
 
   ```sh
-  transaction.withdraw(50)
-   => 50.0
+  account.withdraw(500)
+   => 500.00
   ```
 
 - View bank statement
 - Create a new bank statement
   ```sh
   bank_statement = BankStatement.new
-  bank_statement.print(transaction)
+  account.print_bank_statement
   date || credit || debit || balance
-  01/02/2022 || 100.00 || || 100.00
-  01/02/2022 || || 50.00 || 50.00
+  01/02/2022 || 1000.00 || || 1000.00
+  01/02/2022 || || 500.00 || 500.00
   ```
 
 ### Testing
@@ -88,5 +88,5 @@ date || credit || debit || balance
 
 ### Approach
 
-- The Transactions class handles deposits and withdrawals and stores these in a transactions record that remembers a type of transaction, the date, and the amount.\n
-- The BankStatement class is only responsible for getting information from the transactions record, calculating the balance after every transaction in order to print a bank statement according the the acceptance criteria formatting.
+- The Account class handles deposits and withdrawals and stores these in a transactions record that remembers a type of transaction, the date, and the amount. It also calls on the bank statement formatter method of the BankStatement class in order to print out the statement.\n
+- The BankStatement class is only responsible for getting information from the transactions record, calculating the balance after every transaction in order to format out a bank statement according the the acceptance criteria formatting.
