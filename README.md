@@ -8,7 +8,7 @@ User can make bank account transactions, e.g. deposit and withdraw money, and vi
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/EviePalaiochorinou/bank-tech-test
+   git clone https://github.com/EviePalaiochorinou/bank-ledger
    ```
 2. Install gems
    ```sh
@@ -21,7 +21,7 @@ User can make bank account transactions, e.g. deposit and withdraw money, and vi
   ```sh
   irb -r ./lib/bank_statement.rb
   ```
-- Create a new transaction
+- Create a new account
   ```sh
   account = Account.new
   ``` 
